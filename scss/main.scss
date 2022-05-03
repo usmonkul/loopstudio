@@ -1,0 +1,19 @@
+@import "base/reset";
+@import "base/global";
+@import "base/typography";
+@import "components/buttons";
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/placeholders";
+@import "helpers/variables";
+@import "pages/contact";
+@import "pages/home";
+@import "layout/header";
+@import "layout/grid";
+@import "layout/footer";
+
+.heading {
+  color: $primary-color;
+  font-size: 75px;
+  @extend %center;
+}
