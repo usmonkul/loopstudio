@@ -1,0 +1,28 @@
+.header-hero-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  background-image: url(../img/hero-bg.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.hero {
+  padding-top: 6.6rem;
+  padding-bottom: 14.6rem;
+  &__content {
+    width: 100%;
+    max-width: 650px;
+    padding: 4rem;
+    color: white;
+    border: 2px solid #ffffff;
+  }
+  &__heading {
+    font-family: $font-stack-primary;
+    font-weight: 300;
+    font-size: 7.2rem;
+    line-height: 7rem;
+    text-transform: uppercase;
+  }
+}
