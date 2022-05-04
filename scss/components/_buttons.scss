@@ -1,0 +1,16 @@
+.btn-gallery {
+  display: inline-block;
+  padding: 13px 43px 13px 38px;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #000000;
+  cursor: pointer;
+  border: 1px solid black;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
