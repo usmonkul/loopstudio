@@ -1,0 +1,124 @@
+// Footer
+
+.footer {
+  padding-top: 4.4rem;
+  padding-bottom: 4.4rem;
+  background-color: #000000;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include respond(phone) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__left {
+    margin-right: 4rem;
+    display: flex;
+    flex-direction: column;
+    @include respond(phone) {
+      align-items: center;
+      margin-right: 0;
+      margin-bottom: 4.8rem;
+    }
+  }
+  &__logo-link {
+    margin-bottom: 24px;
+    display: inline-flex;
+    cursor: pointer;
+  }
+  &__logo-img {
+    display: block;
+    width: 144px;
+    height: 24px;
+  }
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    @include respond(phone) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__nav-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    &::after {
+      content: "";
+      width: 45%;
+      height: 2px;
+      background-color: white;
+      margin-top: 8px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    &:hover::after {
+      opacity: 1;
+    }
+    &:not(:last-child) {
+      margin-right: 3.2rem;
+      @include respond(phone) {
+        margin-right: 0;
+      }
+    }
+  }
+  &__nav-list-link {
+    color: white;
+    font-size: 15px;
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+}
+
+.media-icon-list {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 14px;
+  @include respond(phone) {
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+}
+.media-icon-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &:not(:last-child) {
+    margin-right: 16px;
+  }
+  &::after {
+    content: "";
+    width: 75%;
+    height: 2px;
+    background-color: white;
+    margin-top: 8px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+}
+.media-icon-img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.footer__copyright {
+  font-size: 15px;
+  line-height: 25px;
+  opacity: 0.5;
+  text-align: center;
+}

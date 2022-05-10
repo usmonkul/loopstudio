@@ -4,10 +4,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include respond(phone) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
   &__logo-link {
     flex-shrink: 0;
     margin-right: 30px;
     transition: opacity 0.4s ease;
+    z-index: 100;
     &:hover {
       opacity: 0.8;
     }
@@ -20,18 +25,41 @@
     object-fit: contain;
     width: 192px;
     height: 32px;
+    @include respond(phone) {
+      width: 144px;
+      height: 24px;
+    }
   }
+
   &__nav-list {
     display: flex;
     align-items: center;
     margin: 0;
     padding: 0;
+    @include respond(phone) {
+      display: none;
+    }
+  }
+  .js-nav-list-open {
+    @include respond(phone) {
+      display: block;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 100;
+      position: fixed;
+      left: 20px;
+      top: 30%;
+    }
   }
   &__nav-list-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     list-style: none;
+    @include respond(phone) {
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
     &::after {
       content: "";
       width: 45%;
@@ -51,5 +79,40 @@
   &__nav-list-link {
     color: white;
     font-size: 15px;
+    @include respond(phone) {
+      font-family: $font-stack-primary;
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 25px;
+      text-transform: uppercase;
+    }
   }
+  // Mobile
+  .overflow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+  }
+  .hamburger {
+    width: 24px;
+    height: 24px;
+    background-image: url("/img/hamburger.svg");
+    background-repeat: no-repeat;
+    display: none;
+    @include respond(phone) {
+      display: block;
+      z-index: 100;
+    }
+  }
+  .hamburger-active {
+    background-image: url("/img/close.svg");
+  }
+}
+
+.nav-open {
+  overflow-y: hidden;
+  overflow-x: hidden;
 }

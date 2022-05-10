@@ -7,23 +7,38 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  @include respond(phone) {
+    height: 100vh;
+  }
 }
 .hero {
   padding-top: 6.6rem;
   padding-bottom: 14.6rem;
+  @include respond(phone) {
+    padding-top: 16rem;
+    padding-bottom: 22rem;
+  }
   &__content {
     width: 100%;
     max-width: 650px;
     padding: 4rem;
     color: white;
     border: 2px solid #ffffff;
+    @include respond(phone) {
+      padding: 2.4rem;
+    }
   }
   &__heading {
+    margin: 0;
     font-family: $font-stack-primary;
     font-weight: 300;
     font-size: 7.2rem;
     line-height: 7rem;
     text-transform: uppercase;
+    @include respond(phone) {
+      font-size: 4rem;
+      line-height: 3.8rem;
+    }
   }
 }
 
@@ -33,15 +48,28 @@
 .promo {
   padding-top: 16rem;
   padding-bottom: 10rem;
+  @include respond(phone) {
+    padding-top: 9.6;
+    padding-bottom: 2rem;
+  }
   &__container {
     display: flex;
     align-items: flex-end;
+    @include respond(phone) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &__img {
     flex-shrink: 0;
     width: 731px;
     height: 500px;
     object-fit: cover;
+    @include respond(phone) {
+      width: 100%;
+      height: 224px;
+      width: 398px;
+    }
   }
   &__info {
     width: 54.1rem;
@@ -49,6 +77,13 @@
     padding-left: 9.6rem;
     margin-left: -16.1rem;
     background-color: #fff;
+    @include respond(phone) {
+      width: 100%;
+      margin-left: 0;
+      padding-left: 0;
+      padding-top: 4.8rem;
+      text-align: center;
+    }
   }
   &__heading {
     font-family: $font-stack-primary;
@@ -58,6 +93,10 @@
     margin: 0;
     text-transform: uppercase;
     margin-bottom: 2.5rem;
+    @include respond(phone) {
+      font-size: 32px;
+      line-height: 32px;
+    }
   }
   &__text {
     padding: 0;
@@ -75,12 +114,17 @@
   &__container {
     display: flex;
     flex-direction: column;
+    position: relative;
   }
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8rem;
+    @include respond(phone) {
+      margin-bottom: 4.8rem;
+      justify-content: center;
+    }
   }
   &__heading {
     font-family: $font-stack-primary;
@@ -90,6 +134,10 @@
     margin: 0;
     padding: 0;
     font-weight: 300;
+    @include respond(phone) {
+      font-size: 32px;
+      line-height: 32px;
+    }
   }
   &__list {
     display: flex;
@@ -101,12 +149,23 @@
     list-style: none;
     margin-left: -30px;
     margin-bottom: -30px;
+    @include respond(phone) {
+      width: 100%;
+      margin-left: 0px;
+      margin-bottom: 0px;
+    }
   }
   &__item {
     width: 255px;
     position: relative;
     margin-left: 30px;
     margin-bottom: 30px;
+    @include respond(phone) {
+      width: 100%;
+      height: 120px;
+      margin-left: 0px;
+      margin-bottom: 24px;
+    }
     cursor: pointer;
     &::after {
       position: absolute;
@@ -128,8 +187,13 @@
   }
   &__img {
     display: block;
-    width: 255px;
+    width: 100%;
     height: 450px;
+    @include respond(phone) {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
   }
   &__list-heading {
     margin: 0;
@@ -147,78 +211,20 @@
     line-height: 3.2rem;
     text-transform: uppercase;
     color: white;
+    @include respond(phone) {
+      font-size: 24px;
+      line-height: 24px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      max-width: 130px;
+    }
   }
 }
 
-// Footer
-
-.footer {
-  padding-top: 4.4rem;
-  padding-bottom: 4.4rem;
-  background-color: #000000;
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.btn-gallery {
+  white-space: nowrap;
+  @include respond(phone) {
+    position: absolute;
+    bottom: -60px;
   }
-  &__left {
-    margin-right: 4rem;
-    display: flex;
-    flex-direction: column;
-  }
-  &__logo-link {
-    margin-bottom: 24px;
-    display: inline-flex;
-    cursor: pointer;
-  }
-  &__logo-img {
-    display: block;
-    width: 144px;
-    height: 24px;
-  }
-  &__right {
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-  }
-}
-
-.media-icon-list {
-  display: flex;
-  justify-content: flex-end;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 14px;
-}
-.media-icon-item {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  &:not(:last-child) {
-    margin-right: 16px;
-  }
-  &::after {
-    content: "";
-    width: 75%;
-    height: 2px;
-    background-color: white;
-    margin-top: 8px;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-  &:hover::after {
-    opacity: 1;
-  }
-}
-.media-icon-img {
-  display: block;
-  width: 24px;
-  height: 24px;
-}
-.footer__copyright {
-  font-size: 15px;
-  line-height: 25px;
-  opacity: 0.5;
 }
